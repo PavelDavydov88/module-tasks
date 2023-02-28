@@ -1,0 +1,22 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<script type="module">
+    import {firstUpper, substitution, countWord, distinctWord} from './methodsTask1.js';
+    let str = prompt("enter a string", "Преобразование строки к нижнему регистру")
+    alert(firstUpper(str));
+
+    str = prompt("enter a sentence", "Преобразование строки с целью правильно расстановки пробелов")
+    alert( substitution(str));
+
+    str = prompt("enter a sentence", "Подсчет кол-ва слов в строке")
+    alert( countWord(str));
+
+    str = prompt("enter a sentence", "Подсчет уникальных слова")
+    distinctWord(str);
+
+</script>
+

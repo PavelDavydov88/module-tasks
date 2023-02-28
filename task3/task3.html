@@ -1,0 +1,50 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8"/>
+</head>
+
+<script type="module">
+    import {makeItem, arrCondition, filterItem} from './methodsTask3.js';
+
+    let arrItem = [
+        makeItem("Milk", 50, 3, "milk 3.5%"),
+        makeItem("Bread", 20, 1, "white"),
+        makeItem("Cookie", 100, 3, "fruity flavor"),
+        makeItem("Candy", 150, 3, "with chocolate"),
+        makeItem("Apple", 60, 2, "green peel"),
+        makeItem("Orange", 70, 4, "from Turkey"),
+    ];
+
+    let conditions1 = arrCondition("name-contains-a&price->30&quantity->2");
+    let finish = arrItem;
+    for (let item of finish)
+        alert(JSON.stringify(item));
+
+    for (let item of conditions1)
+        alert(item);
+
+    for (let condition of conditions1){
+        finish = filterItem(finish, condition[0], condition[1], condition[2]);
+    }
+    for (let item of finish)
+        alert(JSON.stringify(item));
+
+
+    let conditions2 = arrCondition("name-starts-C&quantity->=4");
+    finish = arrItem;
+    for (let item of finish)
+        alert(JSON.stringify(item));
+
+    for (let item of conditions2)
+        alert(item);
+
+    for (let condition of conditions2){
+        finish = filterItem(finish, condition[0], condition[1], condition[2]);
+    }
+    for (let item of finish)
+        alert(JSON.stringify(item));
+
+
+</script>
+
